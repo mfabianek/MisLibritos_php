@@ -1,0 +1,655 @@
+/*reseteo de valores*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+/*configuracion de variables*/
+:root{
+    --main-color: #ebc242;
+    --secondary-color: #7d81a6;
+    --third-color: #ffffff;
+    --third-color-t: #eedede;
+}
+/*estilos del body*/
+body{
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+}
+/*generalidades*/
+h1{
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+   
+}
+h2{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+
+/*media querys para dispositivos hasta 800px para el h1 y h2*/
+@media screen and (max-width: 800px) {
+    h1{
+        font-size: 2.2rem;
+    }
+    h2{
+        font-size: 1.8rem;
+    }
+
+}
+    
+}
+header,footer{
+    background-color: var(--third-color);
+    color: var(--main-color);
+    padding: 20px;
+}
+
+hr{
+    
+    border: 2px solid #676c91;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+/*estilos del header*/
+
+.header{
+    height: 15vh;
+    position:sticky;
+    top:0; 
+    z-index: 10; 
+    nav{
+        height: 100%;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        a{
+            text-decoration: none;
+            color:#656db1  ;
+            font-size:1.6rem;
+            font-weight: bold;
+        }
+        ul{
+            list-style: none;
+            display:flex;
+            column-gap: 40px;
+            a{
+                font-size:1.4rem;
+            }
+           
+        }
+    }
+}
+
+/*header - css para responsive*/
+@media screen and (max-width: 800px) {
+    .header{
+       height:initial;
+       nav{
+         flex-direction: column;
+         row-gap: 20px;
+         ul{
+             flex-direction: column;
+             row-gap: 10px;
+             text-align: center;
+         }
+       }
+ 
+    }
+     
+ }
+/*main
+estilos seccion principal
+*/
+.sectionTitulos{
+    height: 85vh;
+    background:linear-gradient(to bottom, #000000a3, #51266ea3),url("../assets/img/banner-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    .contenedorTitulos{
+        text-align: center;
+        width: 60%;
+        margin:0 auto;
+        border-radius: 5px;
+        a{
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            color:var(--main-color);
+            font-size: 2rem;
+            /*border:2px solid var(--main-color);*/
+            border-radius: 15px;
+            padding:10px 20px;
+        }
+        h2{ color: #ffffff !important;
+        }
+
+    }
+    .botonRegistrarse{
+        background-color:#e72149;
+        color: #ffffff !important;
+        padding: 1rem 2rem;
+        border-radius: 25px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-decoration: none;
+         /* Agregar efecto de botón presionado */
+         transition: transform 0.3s, box-shadow 0.3s;
+         &:hover {
+             background-color: #e72149;
+             transform: scale(0.85);
+         }
+    }
+}
+
+/*titulos - css para responsive*/
+@media screen and (max-width: 800px) {
+    .sectionTitulos{
+        height: 68vh;
+        background:linear-gradient(to bottom, #000000a3, #51266ea3),url("../assets/img/bg_mobile.jpg") no-repeat;
+        .contenedorTitulos{
+            width: 90%;
+            backdrop-filter:initial;
+            a{/*boton de registrarse de la seccion de arriba*/
+                font-size: 1.8rem;
+            }
+            h1{
+                font-size: 3rem;
+            }
+        }
+    }
+  
+}
+.buscadorlibros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    .inputcasilla{
+        border: 2px solid white;
+        border-radius: 25px;
+        color: #ffffff;
+        font-size: 1.2rem;
+        height: 50px;
+        margin: 20px 0px;
+        outline: none;
+        padding: 0px 20px;
+        width: 500px;
+    }
+    .inputboton{
+        background-color:#e72149;
+        display: inline-block;
+        color:#ffffff;
+        height: 50px;
+        margin: 20px 10px;
+        padding:0 30px;
+        border-radius: 25px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        border: 2px solid #ebc242;
+        text-align: center;
+    }
+}
+
+
+.librosTendencias{
+    width: 80%;
+    margin:0 auto;
+    text-align: center;
+    h2{
+        margin-top:50px;
+        margin-bottom:50px;
+    }
+    .galeriaTendencias{
+        display:flex;
+        justify-content: space-evenly;
+        gap: 50px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        div{
+            width: 250px;
+            height: 350px;
+            box-shadow: 10px 10px 47px -6px rgba(255,255,255,0.42);
+            border-radius: 5px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+        }
+    }
+    .boton {
+        background-color:#e72149;
+        color:#ffffff;
+        height: 50px;
+        margin: 20px 10px;
+        padding:0 30px;
+        border-radius: 25px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        border: 2px solid #ebc242;
+        text-align: center;
+    }
+}
+/*estilos de section libros mas vendidos*/
+.LibrosVendidos{
+    width: 80%;
+    margin:0 auto;
+    margin-bottom: 80px;
+    text-align: center;
+    h2{
+        margin-top:50px;
+        margin-bottom:50px;
+    }
+    .galeriaVendidas{
+        overflow-x: scroll;
+        overflow-y: hidden;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: start;
+        column-gap: 30px;
+        padding: 0 0 30px 0;
+        
+        div{
+            width: 220px;
+            height: 350px;
+            flex-shrink: 0;
+            box-shadow: 10px 10px 47px -45px rgba(255,255,255,0.29);           
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+/*footer estilos*/
+.footer{
+    background-color:#e72149;
+    color:#ffffff;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .listaNav{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        .listaItem{
+            margin-left:20px;
+            .linkNav{
+                text-decoration: none;
+                color:#ffffff;
+                font-weight: 700;
+                font-size: 1.2rem;
+            }
+            .administradorLibros{
+                background-color: #aa6cba;
+                color: white;
+                padding: 0.5rem 1rem;
+            }
+        }
+    }
+    .redes{
+        margin-bottom: 20px;
+        ul{
+            list-style: none;
+            display: flex;
+            column-gap: 20px;
+            li{
+                a{
+                    text-decoration: none;
+                    color: #ffffff;
+                    font-size: 2.5rem;
+                    margin-right: 50px;
+                }
+            }
+          
+        }
+    }
+    .flechaArriba{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        color: white;
+        cursor: pointer;
+    }
+}
+/*footer - css responsive*/
+@media (max-width: 768px) {
+    .footer{
+        height: initial;
+        padding-top:15px;
+        padding-bottom: 20px;
+        .listaNav{
+            flex-direction: column;
+           
+            row-gap: 15px;
+            .listaItem{
+                
+                .linkNav{
+                    font-size: 1rem;
+                }
+                .administradorLibros{
+                    padding: 0.5rem 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+.mainDetalle{
+    
+    .detalle{
+        padding-top:50px;
+        background:linear-gradient(to right top, #000000a3, #51266ea3),url("../assets/img/banner-bg-detalle.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 50vh;
+        .contenedorDetalle{
+            width:75%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 60px;
+            img{
+              border-radius: 10px;
+              max-width: 100%;
+              
+            }
+            .textoDetalle{
+                h1{
+                    font-size: 2.2rem;
+                    font-weight: 700;
+                    color: #fff;
+                }
+                h2{
+                    margin-top:20px;
+                    color: #fff;
+                }
+                p{
+                    font-size: large;
+                }
+                .contenedorCreditos{
+                    margin-top:20px;
+                    display: flex;
+                    justify-content:space-evenly;
+                }
+            }
+        }
+        
+    }
+    .videopresentacion{
+        padding-top:80px;
+        padding-bottom: 100px;
+        width:60%;
+        margin: 0 auto;
+        display: flex;
+        justify-content:space-evenly ;
+        align-items: center;
+        column-gap: 70px;
+        .contenedorInfo{
+            
+            .info{
+                table{
+                    width: 100%;
+                    tr{
+                        td{
+                            font-size: 1.2rem;
+                            padding: 20px 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/*Detalle - css para responsive*/
+@media screen and (max-width:1200px){
+    .mainDetalle{
+        .detalle{
+            height: initial;
+            .contenedorDetalle{
+                flex-direction: column;
+                row-gap: 20px;
+                img{
+                    width: 100%;
+                    height: 300px;
+                }
+                .textoDetalle{
+                    h1{
+                        font-size: 1.5rem;
+                    }
+                    h2{
+                        font-size: 1rem;
+                    }
+                    .contenedorCreditos{
+                        flex-direction: column;
+                        row-gap: 10px;
+                    }
+                }
+            }
+        }
+        .trailer{
+            width:95%;
+            padding-top:50px;
+            padding-bottom: 50px;
+            flex-direction: column;
+            row-gap: 20px;
+            .contenedorTrailer{
+                width: 100%;
+                h2{
+                    margin-bottom: 20px;
+                }
+                iframe{
+                    width: 100%;
+                    height: 300px;
+                
+                }
+            }
+            .contenedorInfo{
+                width: 100%;
+                .redes{
+                    width: 100% ;
+                    ul{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                       
+                        li{
+                            a{
+                                font-size: 2rem;
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+                .info{
+                    table{
+                        tr{
+                            td{
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*Registrarse estilos css */
+.bodyRegistrarse{
+    height: 100vh;
+    background:linear-gradient(to right top, #24242473,#24242473), url("../assets/img/books-pattern.jpg"), repeat;
+    
+    background-size: cover;
+    background-position: center;
+    .headerRegistrarse{
+        color:#ffffff;
+        height: 8vh;
+        padding:30px;
+        .anclaLogo{
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.2rem;
+             /*animacion hover*/
+            &:hover{
+                animation: tilt-n-move-shaking 0.25s infinite;
+            }
+        }
+    }
+    .main{
+         /*seccion de registrarse.html*/
+        .seccionRegistrarse{
+            background-color:rgb(42, 42, 42);
+            width: 30%;
+            border-radius: 5px;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            font-size:1.2rem;
+            .tituloRegistrarse{
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+            /*seleccionar todos los input menos el checkbox*/
+            form{
+                width: 100%;
+                padding:40px;
+                input:not(.check,.boton),select{
+                    width: 100%;
+                    margin-bottom: 20px;
+                    height: 40px;
+                    padding: 0px 20px;
+                    font-size: 1.2rem;
+                    border-radius: 20px;
+                    border: 2px solid #ebc242;
+                    background-color: #fff;
+                    outline: none;
+                    
+                }
+                .terminos{
+                    font-size: 0.8rem;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    .textoCheck{
+                        margin-left: 10px;
+                    }
+                }
+                .boton{
+                    width: 92%;
+                    box-sizing: content-box;
+                    background-color:#e72149;
+                    border: 2px solid #ebc242;
+                    color: #ffffff;
+                    padding: 1rem 1rem;
+                    border-radius: 25px;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                                       
+                }
+                .ayuda{
+                    margin-top:40px;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    color: #787878;
+                    font-weight:400;
+                   
+                }
+            }
+           
+        }
+   
+    }
+}
+
+/*Registrarse - css para responsive*/
+@media (max-width: 1200px) {
+    .bodyRegistrarse{
+        .headerRegistrarse{
+            padding:20px;
+            .anclaLogo{
+                font-size: 1rem;
+            }
+        }
+        .main{
+            .seccionRegistrarse{
+                width: 100%;
+                padding: 10px 10px;
+                .tituloRegistrarse{
+                    font-size: 2rem;
+                }
+               form{
+                width: 100%;
+                text-align: center;
+               
+                input:not(.check,.boton),select{
+                    width: 80%;
+                    height: 35px;
+                    font-size: 1rem;
+                }
+                .terminos{
+                    width: 80%;
+                    margin:0 auto;
+                    font-size: 0.7rem;
+                }
+                .boton{
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    width: 70%;
+                    padding: 0.8rem 0.8rem;
+                    font-size: 0.8rem;
+                }
+                .ayuda{
+                    text-align: left;
+                    font-size: 0.8rem;
+                }
+               }
+               
+            }
+        }
+    }
+
+}
+/* Estilos para scroll bars */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #ebc242 ; 
+    border-radius: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: white; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ebc242; 
+  }

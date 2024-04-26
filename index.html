@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIENVENIDOS A MIS LIBRITOS</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+ 
+</head>
+<body>
+    <header class="header">
+        <nav >
+            <a href="#">
+                <img src="./assets/img/logo mis libritos.png" alt="logo imagen" width="150" loading="lazy">
+               </a>  
+            <ul >
+                <li ><a  href="#tendencias">Tendencias</a></li>
+                <li ><a  href="./pages/registrarse.html">Registrarse</a></li>
+                <li ><a  href="./pages/iniciosesion.html">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main" >
+        <section class="sectionTitulos" data-aos="fade-up">
+            <div class="contenedorTitulos">
+                <h1 >Los libros que tus hijos van <br> recordar toda la vida</h1>
+                <h2 >Regalar un libro es amar</h2>
+                <a class="botonRegistrarse"  href="./pages/registrarse.html">Registrate</a>
+            </div>
+           
+        </section>
+        <section class="librosTendencias" >
+            <h2 >¿Qué libro estás buscando para regalar?</h2>
+            <form class="buscadorlibros" >
+                <input class="inputcasilla" type="text" placeholder="Buscar..." id="buscar" name="buscar">
+                <input class="inputboton" type="submit" value="Buscar">
+            </form>
+           
+
+        </section>
+        <hr>
+        <section id="tendencias" class="librosTendencias" data-aos="fade-up">
+            <h2>Las tendencias de hoy</h2>
+            <div class="galeriaTendencias">
+                <div> 
+                    <a href="./pages/detalle.html"><img  src="./assets/img/libro1.jpg" alt="Título" loading="lazy"></a>
+                </div>
+                <div>
+                    <a href="./pages/detalle.html"><img  src="./assets/img/libro2.jpg" alt="Título" loading="lazy"></a>
+                </div>
+                <div>
+                    <a href="./pages/detalle.html"><img  src="./assets/img/libro3.jpg" alt="Título" loading="lazy"></a>
+                </div>
+                <div>
+                    <a href="./pages/detalle.html"><img  src="./assets/img/libro4.jpg" alt="Título" loading="lazy"></a>
+                </div>
+                <div>
+                    <a href="./pages/detalle.html"><img  src="./assets/img/libro5.jpg" alt="Título" loading="lazy"></a>
+                </div>
+                <div>
+                    <a href="./pages/detalle.html"><img  src="./assets/img/libro6.jpg" alt="Título" loading="lazy"></a>
+                </div>
+                <div>
+                    <a href="./pages/detalle.html"><img  src="./assets/img/libro7.jpg" alt="Título" loading="lazy"></a>
+                </div>
+                <div>
+                    <a href="./pages/detalle.html"><img  src="./assets/img/libro8.jpg" alt="Título" loading="lazy"></a>
+                </div>
+                <div>
+                    <a href="./pages/detalle.html"><img  src="./assets/img/libro9.jpg" alt="Título" loading="lazy"></a>
+                </div>
+                <div>
+                    <a href="./pages/detalle.html"><img  src="./assets/img/libro10.jpg" alt="Título" loading="lazy"></a>
+                </div>
+                
+             
+            </div>
+            <button class="boton anterior">Anterior</button>  
+            <button class="boton siguiente">Siguiente</button>
+        </section>
+        <hr>
+        <section class="LibrosVendidos" >
+            <h2>Los libros infantiles más vendidos</h2>
+             <div class="galeriaVendidas">
+                
+                <div >
+                    <img  src="./assets/img/libro11.jpg" alt="vendida_3" loading="lazy">
+                </div>
+                <div >
+                    <img  src="./assets/img/libro12.jpg" alt="vendida_4" loading="lazy">
+                </div>
+                <div >
+                    <img  src="./assets/img/libro13.jpg" alt="vendida_5" loading="lazy">
+                </div>
+                <div >
+                    <img  src="./assets/img/libro14.jpg" alt="vendida_6" loading="lazy">
+                </div>
+                <div >
+                    <img  src="./assets/img/libro15.jpg" alt="vendida_7" loading="lazy">
+                </div>
+               
+                <div >
+                    <img  src="./assets/img/libro2.jpg" alt="vendida_10" loading="lazy">
+                </div>
+                <div >
+                    <img  src="./assets/img/libro10.jpg" alt="vendida_11" loading="lazy">
+                </div>
+                <div >
+                    <img  src="./assets/img/libro11.jpg" alt="vendida_12" loading="lazy">
+                </div>               
+            </div>
+        </section>
+
+    </main>
+   
+
+    <footer class="footer">
+        <nav class="navegacion">
+            <ul class="listaNav">
+                <li class="listaItem"><a class="linkNav" href="">Términos y condiciones</a></li>
+                <li class="listaItem"><a class="linkNav" href="">Preguntas frecuentes</a></li>
+                <li class="listaItem"><a class="linkNav" href="">Ayuda</a></li>
+                <li class="listaItem"><a class="linkNav administradorLibros" href="">Administrador Libros</a></li>
+            </ul>
+        </nav>
+        <a href="#main" class="flechaArriba">
+            <img src="./assets/img/flecha-hacia-arriba.png" alt="ir arriba flecha">
+        </a>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+</html>
