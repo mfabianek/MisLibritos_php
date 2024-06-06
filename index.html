@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIENVENIDOS A MIS LIBRITOS</title>
     <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/estilos_clima.css">
     <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
  
 </head>
 <body>
@@ -115,7 +117,36 @@
                 </div>               
             </div>
         </section>
+        <section class="clima">
+            <div class="weather-card">
+              <h2 id="city">Ciudad: </h2>
+              <div class="temp" id="temp">°C</div>
+              <div class="weather-info">
+                <div>
+                  <span>Sensación</span>
+                  <strong id="feelsLike">°C</strong>
+                </div>
+                <div>
+                  <span>Presión</span>
+                  <strong id="pressure"> hPa</strong>
+                </div>
+                <div>
+                  <span>Humedad</span>
+                  <strong id="humidity">%</strong>
+                </div>
+                <div>
+                  <span>Mín</span>
+                  <strong id="tempMin">°C</strong>
+                </div>
+                <div>
+                  <span>Máx</span>
+                  <strong id="tempMax">°C</strong>
+                </div>
+              </div>
+            </div>
+          </section>
 
+        
     </main>
    
 
@@ -137,5 +168,9 @@
     <script>
     AOS.init();
     </script>
+
+     <!--script que trae peliculas de un servidor de tercero y crea cada pelicula en el dom-->
+     <script src="./js/cargar_libros_index.js"></script>
+     <script src="./js/api_clima.js"></script>
 </body>
 </html>

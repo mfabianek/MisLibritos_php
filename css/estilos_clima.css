@@ -1,0 +1,40 @@
+section.clima {
+    font-family: "nunito", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:50px ;
+    margin-bottom: 70px;
+  }
+  .weather-card {
+    background: linear-gradient(to bottom, #e72149, #ebc242);
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+  }
+  .weather-card h2 {
+    margin: 0;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .weather-card .temp {
+    font-size: 32px;
+    margin: 10px 0;
+  }
+  .weather-card .weather-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .weather-card .weather-info div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .weather-card .weather-info div span {
+    font-size: 14px;
+  }  
