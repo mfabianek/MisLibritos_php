@@ -1,0 +1,445 @@
+/*reseteo de valores*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+/*configuracion de variables*/
+:root{
+    --main-color: #ebc242;
+    --secondary-color: #7d81a6;
+    --third-color: #ffffff;
+    --third-color-t: #eedede;
+}
+/*estilos del body*/
+body{
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+}
+/*generalidades*/
+h1{
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+   
+}
+h2{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+
+/*media querys para dispositivos hasta 800px para el h1 y h2*/
+@media screen and (max-width: 800px) {
+    h1{
+        font-size: 2.2rem;
+    }
+    h2{
+        font-size: 1.8rem;
+    }
+
+}
+    
+}
+header,footer{
+    background-color: var(--third-color);
+    color: var(--main-color);
+    padding: 20px;
+}
+
+hr{
+    
+    border: 2px solid #676c91;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+/*estilos del header*/
+
+.header{
+    height: 15vh;
+    position:sticky;
+    top:0; 
+    z-index: 10; 
+    nav{
+        height: 100%;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        a{
+            text-decoration: none;
+            color:#656db1  ;
+            font-size:1.6rem;
+            font-weight: bold;
+        }
+        ul{
+            list-style: none;
+            display:flex;
+            column-gap: 40px;
+            a{
+                font-size:1.4rem;
+            }
+           
+        }
+    }
+}
+
+/*header - css para responsive*/
+@media screen and (max-width: 800px) {
+    .header{
+       height:initial;
+       nav{
+         flex-direction: column;
+         row-gap: 20px;
+         ul{
+             flex-direction: column;
+             row-gap: 10px;
+             text-align: center;
+         }
+       }
+ 
+    }
+     
+ }
+/*main
+estilos seccion principal
+*/
+.sectionTitulos{
+    height: 85vh;
+    background:linear-gradient(to bottom, #000000a3, #51266ea3),url("../assets/img/banner-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    .contenedorTitulos{
+        text-align: center;
+        width: 60%;
+        margin:0 auto;
+        border-radius: 5px;
+        a{
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            color:var(--main-color);
+            font-size: 2rem;
+            /*border:2px solid var(--main-color);*/
+            border-radius: 15px;
+            padding:10px 20px;
+        }
+        h2{ color: #ffffff !important;
+        }
+
+    }
+    .botonInsertar{
+        background-color:#e72149;
+        color: #ffffff !important;
+        padding: 1rem 2rem;
+        border-radius: 25px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-decoration: none;
+         /* Agregar efecto de botón presionado */
+         transition: transform 0.3s, box-shadow 0.3s;
+         &:hover {
+             background-color: #e72149;
+             transform: scale(0.85);
+         }
+    }
+}
+
+/*titulos - css para responsive*/
+@media screen and (max-width: 800px) {
+    .sectionTitulos{
+        height: 68vh;
+        background:linear-gradient(to bottom, #000000a3, #51266ea3),url("../assets/img/bg_mobile.jpg") no-repeat;
+        .contenedorTitulos{
+            width: 90%;
+            backdrop-filter:initial;
+            a{/*boton de registrarse de la seccion de arriba*/
+                font-size: 1.8rem;
+            }
+            h1{
+                font-size: 3rem;
+            }
+        }
+    }
+  
+}
+
+.mainDetalle{
+    
+    .detalle{
+        padding-top:50px;
+        background:linear-gradient(to right top, #000000a3, #51266ea3),url("../assets/img/banner-bg-detalle.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 50vh;
+        .contenedorDetalle{
+            width:75%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 60px;
+            img{
+              border-radius: 10px;
+              max-width: 100%;
+              
+            }
+            .textoDetalle{
+                h1{
+                    font-size: 2.2rem;
+                    font-weight: 700;
+                    color: #fff;
+                }
+                h2{
+                    margin-top:20px;
+                    color: #fff;
+                }
+                p{
+                    font-size: large;
+                }
+                .contenedorCreditos{
+                    margin-top:20px;
+                    display: flex;
+                    justify-content:space-evenly;
+                }
+            }
+        }
+        
+    }
+   
+    }
+
+/*Detalle - css para responsive*/
+@media screen and (max-width:1200px){
+    .mainDetalle{
+        .detalle{
+            height: initial;
+            .contenedorDetalle{
+                flex-direction: column;
+                row-gap: 20px;
+                img{
+                    width: 100%;
+                    height: 300px;
+                }
+                .textoDetalle{
+                    h1{
+                        font-size: 1.5rem;
+                    }
+                    h2{
+                        font-size: 1rem;
+                    }
+                    .contenedorCreditos{
+                        flex-direction: column;
+                        row-gap: 10px;
+                    }
+                }
+            }
+        }
+        .trailer{
+            width:95%;
+            padding-top:50px;
+            padding-bottom: 50px;
+            flex-direction: column;
+            row-gap: 20px;
+            .contenedorTrailer{
+                width: 100%;
+                h2{
+                    margin-bottom: 20px;
+                }
+                iframe{
+                    width: 100%;
+                    height: 300px;
+                
+                }
+            }
+            .contenedorInfo{
+                width: 100%;
+                .redes{
+                    width: 100% ;
+                    ul{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                       
+                        li{
+                            a{
+                                font-size: 2rem;
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+                .info{
+                    table{
+                        tr{
+                            td{
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*Administracion estilos css */
+.bodyAdministracion{
+    height: 100vh;
+    background:linear-gradient(to right top, #24242473,#24242473), url("../assets/img/books-pattern.jpg"), repeat;
+    
+    background-size: cover;
+    background-position: center;
+    .headerAdministracion{
+        color:#ffffff;
+        height: 8vh;
+        padding:30px;
+        .anclaLogo{
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.2rem;
+             /*animacion hover*/
+            &:hover{
+                animation: tilt-n-move-shaking 0.25s infinite;
+            }
+        }
+    }
+    .main{
+         /*seccion de registrarse.html*/
+        .seccionAdministracion{
+            background-color:rgb(42, 42, 42);
+            width: 30%;
+            border-radius: 5px;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+            /*height: 90vh;*/   /*Modificado por Alberto porque sino desborda*/
+            height: 125vh;
+            font-size:1.2rem;
+            .tituloAdministracion{
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+            /*seleccionar todos los input menos el checkbox*/
+            form{
+                width: 100%;
+                padding:40px;
+                input:not(.descripcion,.boton),select{
+                    width: 100%;
+                    margin-bottom: 20px;
+                    height: 40px;
+                    padding: 0px 20px;
+                    font-size: 1.2rem;
+                    border-radius: 20px;
+                    border: 2px solid #ebc242;
+                    background-color: #fff;
+                    outline: none;
+                    
+                }
+                .descripcion{
+                    width: 100%;
+                    margin-bottom: 20px;
+                    height: 150px;
+                    padding: 0px 20px;
+                    font-size: 1.2rem;
+                    border-radius: 20px;
+                    border: 2px solid #ebc242;
+                    background-color: #fff;
+                    outline: none;
+                }
+                
+                }
+                .boton{
+                    width: 92%;
+                    box-sizing: content-box;
+                    background-color:#e72149;
+                    border: 2px solid #ebc242;
+                    color: #ffffff;
+                    padding: 1rem 1rem;
+                    border-radius: 25px;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                                       
+                }
+                
+            }
+           
+        }
+   
+    }
+}
+
+/*Administracion - css para responsive*/
+@media (max-width: 1200px) {
+    .bodyAdministracion{
+        .headerAdministracion{
+            padding:20px;
+            .anclaLogo{
+                font-size: 1rem;
+            }
+        }
+        .main{
+            .seccionAdministracion{
+                width: 100%;
+                padding: 10px 10px;
+                .tituloAdministracion{
+                    font-size: 2rem;
+                }
+               form{
+                width: 100%;
+                text-align: center;
+               
+                input:not(.descripcion,.boton),select{
+                    width: 80%;
+                    height: 35px;
+                    font-size: 1rem;
+                }
+                .descripcion{
+                    width: 80%;
+                    margin:0 auto;
+                    font-size: 0.7rem;
+                }
+                .boton{
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    width: 70%;
+                    padding: 0.8rem 0.8rem;
+                    font-size: 0.8rem;
+                }
+            }
+               
+            }
+        }
+    }
+
+}
+/* Estilos para scroll bars */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #ebc242 ; 
+    border-radius: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: white; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ebc242; 
+  }
