@@ -3,59 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administración | MIS LIBRITOS</title>
+    <title>Detalle | MIS LIBRITOS</title>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="../css/estilos_administracion.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/estilos.css">
     <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 </head>
-<body class="bodyAdministracion">
+
+<body>
     <header class="header">
-        <nav>            
-            <a href="../index.html">
-                <img src="../assets/img/logo mis libritos.png" alt="logo imagen" width="150" loading="lazy">
-               </a>  
-            <ul >
-                <li ><a  href="../index.html">Inicio</a></li>
-                <li ><a  href="registrarse.html">Registrarse</a></li>
-                <li ><a  href="iniciosesion.html">Iniciar Sesión</a></li>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="../index.html"><img src="../assets/img/logo mis libritos.png" alt="logo imagen" width="150" loading="lazy"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
+                  <li class="nav-item">
+                    <a class="nav-link"  href="../index.html#tendencias">Tendencias</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="registrarse.html">Registrarse</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="iniciosesion.html">Iniciar Sesión</a>
+                  </li>
+                  
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main id="mainAdmin" class="mainAdmin">
+      <section class="container mt-5">
+        <h2 class="tituloAdministracion">Administrador de Libros</h2>
+        <form class="row"  method="post" enctype="multipart/form-data">
+            <div class="mb-3 col-12 col-md-6">
+              <label for="titulo" class="form-label">Título</label>
+              <input type="text" class="form-control" id="titulo" name="titulo">
+              <div id="titulo-error" class="error"></div>
+            </div>
+            <div class="mb-3 col-12 col-md-6">
+                <label for="autor" class="form-label">Autor</label>
+                <input type="text" class="form-control" id="autor" name="autor">
+                <div id="autor-error" class="error"></div>
+            </div>
+            <div class="mb-3 col-12 ">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea class="form-control" id="descripcion" rows="3" name="descripcion"></textarea>
+                <div id="descripcion-error" class="error"></div>
+            </div>
+            <div class="mb-3 col-12 col-md-4">
+                <label for="precio" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="precio" name="precio">
+                <div id="precio-error" class="error"></div>
+            </div>
+            <div class="mb-3 col-12 col-md-8">
+                <label for="imagen" class="form-label">Imagen</label>
+                <input type="file" class="form-control" id="imagen" name="imagen">
+                <div id="imagen-error" class="error"></div>
+            </div>
+            <div class="mb-3">
+                <input type="submit" class="btn btn-success" value="Ingresar Libro" >
+            </div>
+            
+          </form>
+
+      </section>
+      <section class="container mt-5 mb-5">
+        <h2 class="tituloListado">Listado de Libros</h2>
+        <table class="table table-hover table-dark table-striped table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">#id</th>
+                <th scope="col">Título</th>
+                <th scope="col">Autor</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>El Principito</td>
+                <td>Antoine de Saint-Exupéry</td>
+                <td>$15000</td>
+                <td><img src="../assets/img/libro1.jpg" class="img-fluid img-thumbnail" alt="El Principito" width="200px"></td>
+                <td>
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                    <button type="button" class="btn btn-warning">Modificar</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Matilda</td>
+                <td>Roald Dahl</td>
+                <td>$10000</td>
+                <td><img src="../assets/img/libro2.jpg" class="img-fluid img-thumbnail" alt="El Principito" width="200px"></td>
+                <td>
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                    <button type="button" class="btn btn-warning">Modificar</button>
+                </td>
+              </tr>
+              
+            
+            </tbody>
+          </table>
+
+      </section>
+
+    </main>
+    <footer class="footer">
+        <nav class="navegacion">
+            <ul class="listaNav">
+                <li class="listaItem"><a class="linkNav" href="">Términos y condiciones</a></li>
+                <li class="listaItem"><a class="linkNav" href="">Preguntas frecuentes</a></li>
+                <li class="listaItem"><a class="linkNav" href="">Ayuda</a></li>
+                <li class="listaItem"><a class="linkNav administradorLibros" href="">Administrador Libros</a></li>
             </ul>
         </nav>
-    </header>
-    <main id="main" class="main">
-        <section class="seccionAdministracion">
-            <form action="" method="get"  id="form-administracion">
-                <h2 class="tituloAdministracion">Administración</h2>
-                <div>
-                    <input type="text" placeholder="Titulo"  id="titulo" name="titulo">
-                    <div id="error-titulo" class="error-text"></div>
-                </div>
-                <div>
-                    <input type="text" placeholder="Autor"  id="autor" name="autor">
-                    <div id="error-autor" class="error-text"></div>
-                </div>
-                <div>
-                    <textarea type="text" placeholder="Descripcion"  class="descripcion" id="descripcion" name="descripcion"></textarea>
-                    <div id="error-descripcion" class="error-text"></div>
-                </div>
-                <div>
-                    <input type="text" placeholder="Precio"  id="precio" name="precio">
-                    <div id="error-precio" class="error-text"></div>
-                </div>
-               
-                <div>
-                    <input type="text" placeholder="Imagen"  id="imagen" name="imagen">
-                    <div id="error-imagen" class="error-text"></div>
-                </div>
-
-                <div>
-                    <input class="boton" type="submit" value="INSERTAR">                
-                </div>
-            </form>
-        </section>
-    </main>
-  
-    <script src="../js/validar_administracion.js"></script>
+        <br>
+        <!--<div class="redes">
+            <p>Seguinos en redes sociales</p>
+            <ul>
+                <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-instagram" ></i></a></li>
+                
+            </ul>
+        </div>-->
+        <a href="#main" class="flechaArriba">
+            <img src="../assets/img/flecha-hacia-arriba.png" alt="ir arriba flecha">
+        </a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
