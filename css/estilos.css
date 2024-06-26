@@ -653,3 +653,13 @@ estilos seccion principal
   ::-webkit-scrollbar-thumb:hover {
     background: #ebc242; 
   }
+
+  /* Estilos para administrador de libros */
+  .table{
+    color: #fff;
+  }
+
+  .row{
+    color: #fff;
+    font-weight: bold;
+  }
