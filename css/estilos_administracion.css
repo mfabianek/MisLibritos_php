@@ -335,7 +335,7 @@ estilos seccion principal
                 padding:40px;
                 input:not(.descripcion,.boton),select{
                     width: 100%;
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
                     height: 40px;
                     padding: 0px 20px;
                     font-size: 1.2rem;
@@ -347,7 +347,7 @@ estilos seccion principal
                 }
                 .descripcion{
                     width: 100%;
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
                     height: 150px;
                     padding: 0px 20px;
                     font-size: 1.2rem;
@@ -370,13 +370,16 @@ estilos seccion principal
                     font-weight: 700;
                                        
                 }
+                .error-text{
+                    padding-bottom: 10px;
+                }
                 
             }
            
         }
    
     }
-}
+
 
 /*Administracion - css para responsive*/
 @media (max-width: 1200px) {
