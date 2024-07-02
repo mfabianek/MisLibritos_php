@@ -6,11 +6,18 @@ const precio = document.getElementById('precio');
 const imagen = document.getElementById('imagen');
 const formAdministracion = document.getElementById('form-administracion');
 // levanto los campos de error
-const errorTitulo = document.getElementById('error-titulo');
-const errorAutor = document.getElementById('error-autor');
-const errorDescripcion = document.getElementById('error-descripcion');
-const errorPrecio = document.getElementById('error-precio');
-const errorImagen = document.getElementById('error-imagen');
+// const errorTitulo = document.getElementById('error-titulo');
+// const errorAutor = document.getElementById('error-autor');
+// const errorDescripcion = document.getElementById('error-descripcion');
+// const errorPrecio = document.getElementById('error-precio');
+// const errorImagen = document.getElementById('error-imagen');
+
+const errorTitulo = document.getElementById('titulo-error');
+const errorAutor = document.getElementById('autor-error');
+const errorDescripcion = document.getElementById('descripcion-error');
+const errorPrecio = document.getElementById('precio-error');
+const errorImagen = document.getElementById('imagen-error');
+
 
 //si se termino de cargar el dom
 document.addEventListener('DOMContentLoaded', function() {
