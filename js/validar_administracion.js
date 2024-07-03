@@ -5,12 +5,6 @@ const descripcion = document.getElementById('descripcion');
 const precio = document.getElementById('precio');
 const imagen = document.getElementById('imagen');
 const formAdministracion = document.getElementById('form-administracion');
-// levanto los campos de error
-// const errorTitulo = document.getElementById('error-titulo');
-// const errorAutor = document.getElementById('error-autor');
-// const errorDescripcion = document.getElementById('error-descripcion');
-// const errorPrecio = document.getElementById('error-precio');
-// const errorImagen = document.getElementById('error-imagen');
 
 const errorTitulo = document.getElementById('titulo-error');
 const errorAutor = document.getElementById('autor-error');
@@ -32,28 +26,73 @@ document.addEventListener('DOMContentLoaded', function() {
             errorDescripcion.innerText = "";
             errorPrecio.innerText = "";
             errorImagen.innerText = "";
+
+            let formularioValido=true;
  
             if (titulo.value === '' || titulo.value == null) {
                 e.preventDefault();
                 errorTitulo.innerText = "El título es obligatorio";
+                formularioValido=false;
             }
             if (autor.value === '' || autor.value == null) {
                 e.preventDefault();
                 errorAutor.innerText = "El autor es obligatorio";
+                formularioValido=false;
             }
             if (descripcion.value === '' || descripcion.value == null) {
                 e.preventDefault();
                 errorDescripcion.innerText = "La descripción es obligatoria";
+                formularioValido=false;
             }
             if (precio.value === '' || precio.value == null) {
                 e.preventDefault();
                 errorPrecio.innerText = "El precio es obligatorio";
+                formularioValido=false;
             }
             if (imagen.value === '' || imagen.value == null) {
                 e.preventDefault();
                 errorImagen.innerText = "La imagen es obligatoria";
+                formularioValido=false;
             }
-                       
+
+            //fetch con método POST para insertar registro
+
+            if (formularioValido) {
+                const apiUrl = `http://localhost/MisLibritos_API/libritos.php`;
+                                                     
+                const postData = {
+                  Titulo: titulo.value,
+                  Autor: autor.value,
+                  Descripcion: descripcion.value,
+                  Imagen: imagen.value,
+                  Precio: precio.value             
+                };
+              
+                fetch(apiUrl, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json' // Tipo de contenido JSON
+                  },
+                  body: JSON.stringify(postData) // Convertir el objeto a JSON
+                })
+                  .then((response) => response.json())
+                  .then((data) => {
+                    console.log("Librito insertado correctamente");
+                    // Limpiar los campos del formulario
+                    titulo.value = "";
+                    autor.value = "";
+                    descripcion.value = "";
+                    imagen.value = "";
+                    precio.value = "";
+                    // Mostrar mensaje de éxito
+                    alert("Librito insertado correctamente");
+                                        
+                  })
+                  .catch((error) => {
+                    console.error("Error insertando librito:", error);                    
+                  });
+                }
+                                    
         });
 
-});
+})
