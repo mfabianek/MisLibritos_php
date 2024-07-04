@@ -58,13 +58,31 @@ document.addEventListener('DOMContentLoaded', function() {
             //fetch con método POST para insertar registro
 
             if (formularioValido) {
-                const apiUrl = `http://localhost/MisLibritos_API/libritos.php`;
+              
+              function parsePath(path) {
+                // Encuentra la posición de la última barra invertida
+                const lastBackslashIndex = path.lastIndexOf('\\');
+                
+                // Verifica que haya al menos una barra invertida
+                if (lastBackslashIndex === -1) {
+                    throw new Error('La ruta no contiene ninguna barra invertida.');
+                }
+            
+                // Devuelve la subcadena que sigue a la última barra invertida
+                return path.substring(lastBackslashIndex + 1);
+            }
+            
+            const path = imagen.value;
+            const result = parsePath(path);
+                                          
+              const apiUrl = `http://localhost/MisLibritos_API/libritos.php`;
                                                      
                 const postData = {
                   Titulo: titulo.value,
                   Autor: autor.value,
                   Descripcion: descripcion.value,
-                  Imagen: imagen.value,
+                  //Imagen: imagen.value,
+                  Imagen:result,
                   Precio: precio.value             
                 };
               
@@ -86,6 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     precio.value = "";
                     // Mostrar mensaje de éxito
                     alert("Librito insertado correctamente");
+                    location.href="../pages/administracion.html";
+
                                         
                   })
                   .catch((error) => {

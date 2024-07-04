@@ -6,14 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
       for (let index = 0; index < data.length; index++) {
         let id = data[index].id;
         let titulo = data[index].Titulo;
-
-        //let descripcion=(data[index].Descripcion);
         let autor = data[index].Autor;
-        let precio = data[index].Precio;       
-        //let imagen = "../../assets/img/imagen1.webp";
-        //let imagen = "../../assets/img/imagen"+(index+1)+".webp";
-        let imagen = "../../assets/img/imagen"+id+".webp";
-
+        let precio = data[index].Precio;            
+        let imagen = "../../assets/img/"+ data[index].Imagen;
         let listadoElement = document.getElementById("Listado");
         let nuevoLibro = document.createElement("tr");
 
