@@ -13,6 +13,9 @@ fetch(apiUrl)
     const pressure = main.pressure;
     const humidity = main.humidity;
 
+    //console.log(main.temp)
+
+
     let cityElement = document.getElementById("city");
     cityElement.textContent += city;
 
