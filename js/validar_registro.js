@@ -16,14 +16,11 @@ const errorFechaNacimiento = document.getElementById('error-fechaNac');
 const errorPais = document.getElementById('error-pais');
 const errorTerminos = document.getElementById('error-terminos');
 
-//si se termino de cargar el dom
 document.addEventListener('DOMContentLoaded', function() {
 
-        //en el evento submit valido que los campos esten llenos y no dejo que se envie automaticamente el formulario
-        formRegistro.addEventListener('submit', (e) => {
+        formRegistro.addEventListener('submit', async (e) => {
             e.preventDefault();
             console.log("entro a la funcion");
-            // limpio los mensajes de error
             errorNombre.innerText = "";
             errorApellido.innerText = "";
             errorEmail.innerText = "";
@@ -61,6 +58,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 errorTerminos.innerText = " Debes aceptar los términos y condiciones";
             }
 
+            let fechaInput = fechaNacimiento.value;
+
+            let fecha = new Date(fechaInput);
+
+            let year = fecha.getFullYear();
+            let month = ('0' + (fecha.getMonth() + 1)).slice(-2);
+            let day = ('0' + (fecha.getDate() + 1)).slice(-2);
+
+            let fechaFormateada = `${year}-${month}-${day}`;
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nombre: nombre.value,
+                    apellido: apellido.value,
+                    email: email.value,
+                    contrasenia: password.value,
+                    fechaNacimiento: fechaFormateada,
+                    pais: pais.value
+                })
+            };
+
+            const response = await fetch('http://localhost/MisLibritos_API/register.php', options);
+            const data = await response.json();
+            if (response.status === 201) {
+                alert("Registro exitoso");
+                formRegistro.reset();
+                this.location.reload();
+            }
 
         });
 
