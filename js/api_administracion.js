@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const apiUrl = `http://localhost/MisLibritos_API/libritos.php`;
+  const apiUrl = `https://pab.com.ar/libritos.php`;
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
