@@ -86,9 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const response = await fetch('http://localhost/MisLibritos_API/register.php', options);
             const data = await response.json();
             if (response.status === 201) {
-                alert("Registro exitoso");
-                formRegistro.reset();
-                this.location.reload();
+                location.href = "iniciosesion.html";
             }
 
         });

@@ -42,8 +42,7 @@ form.addEventListener('submit', async function (e) {
         const response = await fetch('http://localhost/MisLibritos_API/login.php', options);
         const data = await response.json();
         if (response.status === 200) {
-            alert("Sesión iniciada");
-            form.reset();
+            location.href = "../index.html";
         } else {
             alert("Error en el inicio de sesión: " + data.message);
         }
