@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
             };
 
-            const response = await fetch('http://localhost/MisLibritos_API/register.php', options);
+            const response = await fetch(' https://pab.com.ar/register.php', options);
             const data = await response.json();
             if (response.status === 201) {
                 location.href = "iniciosesion.html";
