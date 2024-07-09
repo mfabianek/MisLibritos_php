@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const path = imagen.value;
             const result = parsePath(path);
                                           
-              const apiUrl = `http://localhost/MisLibritos_API/libritos.php`;
+              const apiUrl = `https://pab.com.ar/libritos.php`;
                                                      
                 const postData = {
                   Titulo: titulo.value,
