@@ -42,13 +42,32 @@ form.addEventListener('submit', async function (e) {
         const response = await fetch('https://pab.com.ar/login.php', options);
         const data = await response.json();
         if (response.status === 200) {
+            Swal.fire({
+                title: "Inicio de sesion",
+                text: "Sesion iniciada correctamente",
+                icon: "success"
+            });
             location.href = "../index.html";
         } else {
-            alert("Error en el inicio de sesión: " + data.message);
+            alertas = "Error en el inicio de sesión: " + data.message;
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: alertas,
+                showConfirmButton: false,
+                timer: 3000
+            });
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('Ocurrió un error durante el inicio de sesión');
+        alertas = "Error en el inicio de sesión: " + error;
+        Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: alertas,
+            showConfirmButton: false,
+            timer: 3000
+        });
     }
 });
 

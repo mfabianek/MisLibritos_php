@@ -1,4 +1,5 @@
 // levanto los campos del formulario de registro que voy a validar
+
 const nombre = document.getElementById('nombre');
 const apellido = document.getElementById('apellido');
 const email = document.getElementById('email');
@@ -20,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         formRegistro.addEventListener('submit', async (e) => {
             e.preventDefault();
-            console.log("entro a la funcion");
             errorNombre.innerText = "";
             errorApellido.innerText = "";
             errorEmail.innerText = "";
@@ -82,11 +82,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     pais: pais.value
                 })
             };
-
-            const response = await fetch(' https://pab.com.ar/register.php', options);
+            console.log(options)
+            const response = await fetch('https://pab.com.ar/register.php', options);
             const data = await response.json();
             if (response.status === 201) {
-                location.href = "iniciosesion.html";
+                Swal.fire({
+                    title: "Registro",
+                    text: "Usuario registrado correctamente",
+                    icon: "success"
+                });
+                //location.href = "iniciosesion.html";
+            }
+            else{
+                Swal.fire({
+                    title: "Registro",
+                    text: "Error registrando el usuario",
+                    icon: "error"
+                });            
             }
 
         });
